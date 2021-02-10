@@ -1,0 +1,7 @@
+2021-02-10 14:59:00.686 - INFO - 216872 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
+2021-02-10 15:03:43.416 - INFO - 216872 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
+2021-02-10 17:16:42.613 - INFO - 275796 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
+2021-02-10 17:18:43.532 - INFO - 275796 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
+2021-02-10 17:19:09.095 - INFO - 275796 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
+2021-02-10 17:19:16.143 - INFO - 275796 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
+2021-02-10 17:21:42.861 - INFO - 275796 - azureml.train.automl.automlconfig._start_execution:207 - Submitting remote.
