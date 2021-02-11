@@ -15,7 +15,7 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 # "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
 
 #ds = pd.read_csv('https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv')
-url= 'https://archive.ics.uci.edu/ml/machine-learning-databases/00519/heart_failure_clinical_records_dataset.csv'
+url= 'https://raw.githubusercontent.com/nandex7/Capstone-Project---Azure-Machine-Learning-Engineer/main/data/WA_Fn-UseC_-Telco-Customer-Churn.csv'
 ds = TabularDatasetFactory.from_delimited_files(path=url,validate='False',separator=',',infer_column_types=True,include_path=False,
 set_column_types=None,support_multi_line=False,partition_format=None)
 
@@ -28,8 +28,8 @@ def clean_data(data):
     x_df = data.to_pandas_dataframe().dropna()
     #x_df = data.dropna()
     
-    y_df = x_df.target
-    x_df = x_df.drop('target', axis=1)
+    y_df = x_df.DEATH_VALUE
+    x_df = x_df.drop('churn', axis=1)
     return x_df, y_df
     
 x, y = clean_data(ds)
