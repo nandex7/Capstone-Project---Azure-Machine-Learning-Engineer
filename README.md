@@ -85,7 +85,7 @@ We load the information to the workspace in azure for the automl using the url p
 
     if not found:
             # Create AML Dataset and register it into Workspace
-            example_data = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00519/heart_failure_clinical_records_dataset.csv'
+            example_data = 'https://raw.githubusercontent.com/nandex7/Capstone-Project---Azure-Machine-Learning-Engineer/main/data/WA_Fn-UseC_-Telco-Customer-Churn.csv'
             dataset = Dataset.Tabular.from_delimited_files(example_data)        
             #Register Dataset in Workspace
             dataset = dataset.register(workspace=ws,
@@ -101,7 +101,7 @@ We load the information using the url and Tabular Dataset Factory.
     from azureml.data.dataset_factory import TabularDatasetFactory
 
     factory = TabularDatasetFactory()
-    test_data_path = "https://archive.ics.uci.edu/ml/machine-learning-databases/00519/heart_failure_clinical_records_dataset.csv"
+    test_data_path = "https://raw.githubusercontent.com/nandex7/Capstone-Project---Azure-Machine-Learning-Engineer/main/data/WA_Fn-UseC_-Telco-Customer-Churn.csv"
     test_ds = factory.from_delimited_files(test_data_path)
 
 
