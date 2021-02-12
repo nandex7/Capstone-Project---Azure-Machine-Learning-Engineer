@@ -27,9 +27,22 @@ def clean_data(data):
     # Clean and one hot encode data
     x_df = data.to_pandas_dataframe().dropna()
     #x_df = data.dropna()
+    #Boolean Values
+    x_df.drop('customerID',inplace=True, axis=1)
+    x_df['Partner']= x_df.Partner.apply(lambda s:1 if s==True else 0)
+    x_df['gender'] =x_df.gender.apply(lambda s:1 if s=="Male" else 0)
+    x_df['Dependents']= x_df.Dependents.apply(lambda s:1 if s==True else 0)
+    x_df['PhoneService']=x_df.PhoneService.apply(lambda s:1 if s==True else 0)
+    x_df['PaperlessBilling']=x_df.PaperlessBilling.apply(lambda s:1 if s==True else 0)
+    x_df['Churn']=x_df.Churn.apply(lambda s:1 if s==True else 0)
     
-    y_df = x_df.DEATH_VALUE
-    x_df = x_df.drop('churn', axis=1)
+    #Categorical Values Hot Encoding.
+    categorical= ['MultipleLines','InternetService'
+    , 'OnlineBackup','OnlineSecurity','DeviceProtection','TechSupport','StreamingTV', 'StreamingMovies', 'Contract','PaymentMethod']
+    x_df = pd.get_dummies(x_df, columns = categorical)
+    
+    y_df = x_df.Churn
+    x_df = x_df.drop('Churn', axis=1)
     return x_df, y_df
     
 x, y = clean_data(ds)

@@ -1,0 +1,359 @@
+2021-02-11 09:52:45.556 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-02-11 09:52:45.578 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-02-11 09:52:45.594 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-02-11 09:52:46.503 - CRITICAL - 21832 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: ServiceException
+Message: ServiceException:
+	Code: 409
+	Message: (UserError) Workspace is in deleting state.Current Operation cannot be performed
+	Details:
+
+	Headers: {
+	    "Date": "Thu, 11 Feb 2021 13:52:46 GMT",
+	    "Content-Type": "application/json; charset=utf-8",
+	    "Content-Length": "607",
+	    "Connection": "keep-alive",
+	    "Request-Context": "appId=cid-v1:2d2e8e63-272e-4b3c-8598-4ee570a0e70d",
+	    "x-ms-response-type": "error",
+	    "X-Content-Type-Options": "nosniff",
+	    "x-request-time": "0.056",
+	    "Strict-Transport-Security": "max-age=15724800; includeSubDomains; preload"
+	}
+	InnerException: {
+    "additional_properties": {},
+    "error": {
+        "additional_properties": {
+            "debugInfo": null
+        },
+        "code": "UserError",
+        "severity": null,
+        "message": "Workspace is in deleting state.Current Operation cannot be performed",
+        "message_format": null,
+        "message_parameters": null,
+        "reference_code": null,
+        "details_uri": null,
+        "target": null,
+        "details": [],
+        "inner_error": null
+    },
+    "correlation": {
+        "operation": "9cd3228af6ba8d4fa510b92f0ace3fea",
+        "request": "806fdc00563fe14e"
+    },
+    "environment": "southcentralus",
+    "location": "southcentralus",
+    "time": {},
+    "component_name": "run-history"
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 762, in _get_run_internal
+    run_tags = self.get_tags()
+  File "run.py", line 1438, in get_tags
+    return self._client.get_tags()
+  File "run_history_facade.py", line 203, in get_tags
+    self.run_dto = self.run.get_run()
+  File "run_client.py", line 76, in get_run
+    return super(RunClient, self).get_run(self._run_id, **kwargs)
+  File "experiment_client.py", line 125, in get_run
+    **kwargs)
+  File "experiment_client.py", line 265, in _execute_with_experimentid_arguments
+    *args, **kwargs)
+  File "clientbase.py", line 583, in _execute_with_arguments
+    raise ServiceException(e)
+
+ExceptionTarget: Unspecified
+2021-02-11 09:52:46.503 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Failure, Duration=908.97[ms]
+2021-02-11 09:52:46.504 - CRITICAL - 21832 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: ServiceException
+Message: ServiceException:
+	Code: 409
+	Message: (UserError) Workspace is in deleting state.Current Operation cannot be performed
+	Details:
+
+	Headers: {
+	    "Date": "Thu, 11 Feb 2021 13:52:46 GMT",
+	    "Content-Type": "application/json; charset=utf-8",
+	    "Content-Length": "607",
+	    "Connection": "keep-alive",
+	    "Request-Context": "appId=cid-v1:2d2e8e63-272e-4b3c-8598-4ee570a0e70d",
+	    "x-ms-response-type": "error",
+	    "X-Content-Type-Options": "nosniff",
+	    "x-request-time": "0.056",
+	    "Strict-Transport-Security": "max-age=15724800; includeSubDomains; preload"
+	}
+	InnerException: {
+    "additional_properties": {},
+    "error": {
+        "additional_properties": {
+            "debugInfo": null
+        },
+        "code": "UserError",
+        "severity": null,
+        "message": "Workspace is in deleting state.Current Operation cannot be performed",
+        "message_format": null,
+        "message_parameters": null,
+        "reference_code": null,
+        "details_uri": null,
+        "target": null,
+        "details": [],
+        "inner_error": null
+    },
+    "correlation": {
+        "operation": "9cd3228af6ba8d4fa510b92f0ace3fea",
+        "request": "806fdc00563fe14e"
+    },
+    "environment": "southcentralus",
+    "location": "southcentralus",
+    "time": {},
+    "component_name": "run-history"
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 618, in _get_best_child_run
+    curr_run = self._get_run_internal(iteration, metric, "get_output")
+  File "run.py", line 762, in _get_run_internal
+    run_tags = self.get_tags()
+  File "run.py", line 1438, in get_tags
+    return self._client.get_tags()
+  File "run_history_facade.py", line 203, in get_tags
+    self.run_dto = self.run.get_run()
+  File "run_client.py", line 76, in get_run
+    return super(RunClient, self).get_run(self._run_id, **kwargs)
+  File "experiment_client.py", line 125, in get_run
+    **kwargs)
+  File "experiment_client.py", line 265, in _execute_with_experimentid_arguments
+    *args, **kwargs)
+  File "clientbase.py", line 583, in _execute_with_arguments
+    raise ServiceException(e)
+
+ExceptionTarget: Unspecified
+2021-02-11 09:52:46.504 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=925.96[ms]
+2021-02-11 09:52:46.505 - CRITICAL - 21832 - azureml.train.automl.run.log_traceback:224 - Type: Unclassified
+Class: ServiceException
+Message: ServiceException:
+	Code: 409
+	Message: (UserError) Workspace is in deleting state.Current Operation cannot be performed
+	Details:
+
+	Headers: {
+	    "Date": "Thu, 11 Feb 2021 13:52:46 GMT",
+	    "Content-Type": "application/json; charset=utf-8",
+	    "Content-Length": "607",
+	    "Connection": "keep-alive",
+	    "Request-Context": "appId=cid-v1:2d2e8e63-272e-4b3c-8598-4ee570a0e70d",
+	    "x-ms-response-type": "error",
+	    "X-Content-Type-Options": "nosniff",
+	    "x-request-time": "0.056",
+	    "Strict-Transport-Security": "max-age=15724800; includeSubDomains; preload"
+	}
+	InnerException: {
+    "additional_properties": {},
+    "error": {
+        "additional_properties": {
+            "debugInfo": null
+        },
+        "code": "UserError",
+        "severity": null,
+        "message": "Workspace is in deleting state.Current Operation cannot be performed",
+        "message_format": null,
+        "message_parameters": null,
+        "reference_code": null,
+        "details_uri": null,
+        "target": null,
+        "details": [],
+        "inner_error": null
+    },
+    "correlation": {
+        "operation": "9cd3228af6ba8d4fa510b92f0ace3fea",
+        "request": "806fdc00563fe14e"
+    },
+    "environment": "southcentralus",
+    "location": "southcentralus",
+    "time": {},
+    "component_name": "run-history"
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 688, in get_output
+    activity_name=automl_shared_constants.TelemetryConstants.GET_OUTPUT
+  File "run.py", line 618, in _get_best_child_run
+    curr_run = self._get_run_internal(iteration, metric, "get_output")
+  File "run.py", line 762, in _get_run_internal
+    run_tags = self.get_tags()
+  File "run.py", line 1438, in get_tags
+    return self._client.get_tags()
+  File "run_history_facade.py", line 203, in get_tags
+    self.run_dto = self.run.get_run()
+  File "run_client.py", line 76, in get_run
+    return super(RunClient, self).get_run(self._run_id, **kwargs)
+  File "experiment_client.py", line 125, in get_run
+    **kwargs)
+  File "experiment_client.py", line 265, in _execute_with_experimentid_arguments
+    *args, **kwargs)
+  File "clientbase.py", line 583, in _execute_with_arguments
+    raise ServiceException(e)
+
+ExceptionTarget: Unspecified
+2021-02-11 09:52:46.505 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=949.0[ms]
+2021-02-11 18:57:39.666 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-02-11 18:57:39.688 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-02-11 18:57:39.708 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-02-11 18:57:40.616 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-02-11 18:57:43.035 - CRITICAL - 21832 - azureml.train.automl.run.log_traceback:224 - Type: ModelMissing
+Class: AutoMLException
+Message: AutoMLException:
+	Message: Could not find a model with valid score for metric 'accuracy'. Please ensure that at least one run was successfully completed with a valid score for the given metric.
+	InnerException: None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Could not find a model with valid score for metric 'accuracy'. Please ensure that at least one run was successfully completed with a valid score for the given metric.",
+        "target": "metric",
+        "inner_error": {
+            "code": "NotFound",
+            "inner_error": {
+                "code": "ModelMissing"
+            }
+        }
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 817, in _get_all_automl_child_runs
+    raise AutoMLException._with_error(AzureMLError.create(ModelMissing, target="metric", metric=metric))
+
+ExceptionTarget: metric
+2021-02-11 18:57:43.036 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Failure, Duration=2420.03[ms]
+2021-02-11 18:57:43.038 - CRITICAL - 21832 - azureml.train.automl.run.log_traceback:224 - Type: ModelMissing
+Class: AutoMLException
+Message: AutoMLException:
+	Message: Could not find a model with valid score for metric 'accuracy'. Please ensure that at least one run was successfully completed with a valid score for the given metric.
+	InnerException: None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Could not find a model with valid score for metric 'accuracy'. Please ensure that at least one run was successfully completed with a valid score for the given metric.",
+        "target": "metric",
+        "inner_error": {
+            "code": "NotFound",
+            "inner_error": {
+                "code": "ModelMissing"
+            }
+        }
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 776, in _get_run_internal
+    child_runs_and_scores = self._get_all_automl_child_runs(metric)
+  File "run.py", line 817, in _get_all_automl_child_runs
+    raise AutoMLException._with_error(AzureMLError.create(ModelMissing, target="metric", metric=metric))
+
+ExceptionTarget: metric
+2021-02-11 18:57:43.038 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Failure, Duration=3330.06[ms]
+2021-02-11 18:57:43.051 - CRITICAL - 21832 - azureml.train.automl.run.log_traceback:224 - Type: ModelMissing
+Class: AutoMLException
+Message: AutoMLException:
+	Message: Could not find a model with valid score for metric 'accuracy'. Please ensure that at least one run was successfully completed with a valid score for the given metric.
+	InnerException: None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Could not find a model with valid score for metric 'accuracy'. Please ensure that at least one run was successfully completed with a valid score for the given metric.",
+        "target": "metric",
+        "inner_error": {
+            "code": "NotFound",
+            "inner_error": {
+                "code": "ModelMissing"
+            }
+        }
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 618, in _get_best_child_run
+    curr_run = self._get_run_internal(iteration, metric, "get_output")
+  File "run.py", line 776, in _get_run_internal
+    child_runs_and_scores = self._get_all_automl_child_runs(metric)
+  File "run.py", line 817, in _get_all_automl_child_runs
+    raise AutoMLException._with_error(AzureMLError.create(ModelMissing, target="metric", metric=metric))
+
+ExceptionTarget: metric
+2021-02-11 18:57:43.051 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=3363.1[ms]
+2021-02-11 18:57:43.052 - CRITICAL - 21832 - azureml.train.automl.run.log_traceback:224 - Type: ModelMissing
+Class: AutoMLException
+Message: AutoMLException:
+	Message: Could not find a model with valid score for metric 'accuracy'. Please ensure that at least one run was successfully completed with a valid score for the given metric.
+	InnerException: None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Could not find a model with valid score for metric 'accuracy'. Please ensure that at least one run was successfully completed with a valid score for the given metric.",
+        "target": "metric",
+        "inner_error": {
+            "code": "NotFound",
+            "inner_error": {
+                "code": "ModelMissing"
+            }
+        }
+    }
+}
+Traceback:
+  File "telemetry_activity_logger.py", line 57, in _log_activity
+    yield
+  File "run.py", line 688, in get_output
+    activity_name=automl_shared_constants.TelemetryConstants.GET_OUTPUT
+  File "run.py", line 618, in _get_best_child_run
+    curr_run = self._get_run_internal(iteration, metric, "get_output")
+  File "run.py", line 776, in _get_run_internal
+    child_runs_and_scores = self._get_all_automl_child_runs(metric)
+  File "run.py", line 817, in _get_all_automl_child_runs
+    raise AutoMLException._with_error(AzureMLError.create(ModelMissing, target="metric", metric=metric))
+
+ExceptionTarget: metric
+2021-02-11 18:57:43.053 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Failure, Duration=3387.05[ms]
+2021-02-11 19:44:37.004 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-02-11 19:44:37.036 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-02-11 19:44:37.056 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-02-11 19:44:38.569 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=1513.0[ms]
+2021-02-11 19:44:38.569 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1533.0[ms]
+2021-02-11 19:44:38.570 - INFO - 21832 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-02-11 19:44:44.945 - CRITICAL - 21832 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 151, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-02-11 19:44:44.961 - WARNING - 21832 - azureml.train.automl._model_download_utilities._download_automl_model:97 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.21.0'. Please install 'azureml-train-automl-runtime==1.21.0' (e.g. `pip install azureml-train-automl-runtime==1.21.0`) and then rerun the previous command.
+2021-02-11 19:44:44.962 - INFO - 21832 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=6392.0[ms]
+2021-02-11 19:44:44.962 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=7958.0[ms]
+2021-02-11 22:56:22.339 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-02-11 22:56:22.364 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetOutput
+2021-02-11 22:56:22.387 - INFO - 21832 - azureml.train.automl.run._log_activity:54 - ActivityStarted: GetChildren
+2021-02-11 22:56:24.201 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetChildren, HowEnded=Success, Duration=1814.01[ms]
+2021-02-11 22:56:24.201 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=1837.01[ms]
+2021-02-11 22:56:24.202 - INFO - 21832 - azureml.train.automl._model_download_utilities._log_activity:54 - ActivityStarted: DownloadModel
+2021-02-11 22:56:29.732 - CRITICAL - 21832 - azureml.train.automl._model_download_utilities.log_traceback:224 - Type: Unclassified
+Class: ModuleNotFoundError
+Message: No module named 'azureml.train.automl.runtime'
+Traceback:
+  File "_model_download_utilities.py", line 151, in _load_automl_model
+    import azureml.train.automl.runtime
+
+ExceptionTarget: Unspecified
+2021-02-11 22:56:29.743 - WARNING - 21832 - azureml.train.automl._model_download_utilities._download_automl_model:97 - The model you attempted to retrieve requires 'azureml-train-automl-runtime' to be installed at '==1.21.0'. Please install 'azureml-train-automl-runtime==1.21.0' (e.g. `pip install azureml-train-automl-runtime==1.21.0`) and then rerun the previous command.
+2021-02-11 22:56:29.747 - INFO - 21832 - azureml.train.automl._model_download_utilities._log_activity:92 - ActivityCompleted: Activity=DownloadModel, HowEnded=Success, Duration=5544.99[ms]
+2021-02-11 22:56:29.748 - INFO - 21832 - azureml.train.automl.run._log_activity:92 - ActivityCompleted: Activity=GetOutput, HowEnded=Success, Duration=7409.0[ms]
