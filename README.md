@@ -202,6 +202,9 @@ Compare the two models and their performance the performance using AutoML 0.8093
 
 
 ![Testingendpoint](images/Testingendpoint.png)
+
+As you see in the testing endpoint we are using five customers to check if they are churn or not.
+
 ![Testingendpoint2](images/Testingendpoint2.png)
 
 ## Screen Recording
